@@ -6,7 +6,7 @@ use Svakode\Svaflazz\SvaflazzClient;
 
 class PriceList extends Base
 {
-    private $keyword = 'pricelist';
+    private string $keyword = 'pricelist';
 
     /**
      * PriceList constructor.

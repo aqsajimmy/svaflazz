@@ -11,7 +11,7 @@ class SvaflazzServiceProvider extends ServiceProvider
     /**
      * Bootstrap the application events.
      */
-    public function boot()
+    public function boot(): void
     {
         $this->publishes([
             __DIR__.'/../config/svaflazz.php' => config_path('svaflazz.php'),
@@ -29,7 +29,7 @@ class SvaflazzServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/svaflazz.php', 'svaflazz');
 

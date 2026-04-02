@@ -6,7 +6,7 @@ use Svakode\Svaflazz\SvaflazzClient;
 
 class CheckBalance extends Base
 {
-    private $keyword = 'depo';
+    private string $keyword = 'depo';
 
     /**
      * CheckBalance constructor.

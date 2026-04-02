@@ -6,7 +6,7 @@ use Svakode\Svaflazz\SvaflazzClient;
 
 class Deposit extends Base
 {
-    private $keyword = 'deposit';
+    private string $keyword = 'deposit';
 
     /**
      * CheckBalance constructor.

@@ -6,7 +6,7 @@ use Svakode\Svaflazz\SvaflazzClient;
 
 class Base
 {
-    protected $client;
+    protected SvaflazzClient $client;
 
     /**
      * Base constructor.
@@ -17,12 +17,12 @@ class Base
         $this->client = $client;
     }
 
-    public function sign(string $keyword)
+    public function sign(string $keyword): string
     {
         return md5(config('svaflazz.username') . config('svaflazz.key') . $keyword);
     }
 
-    public function perform()
+    public function perform(): mixed
     {
         return $this->client->run();
     }

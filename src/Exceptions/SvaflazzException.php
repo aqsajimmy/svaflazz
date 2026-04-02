@@ -6,7 +6,7 @@ use Exception;
 
 class SvaflazzException extends Exception
 {
-    public static function requestFailed(string $rc, string $message, int $code)
+    public static function requestFailed(string $rc, string $message, int $code): static
     {
         $error = [
             'summary' => "Got error with message: `{$message}` and response code: `{$rc}`",
@@ -17,7 +17,7 @@ class SvaflazzException extends Exception
         return new static(json_encode($error), $code);
     }
 
-    public function render($request)
+    public function render($request): \Illuminate\Http\Response
     {
         return response(['error' => json_decode($this->getMessage())], $this->getCode());
     }

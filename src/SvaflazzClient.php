@@ -8,39 +8,39 @@ use Svakode\Svaflazz\Exceptions\SvaflazzException;
 
 class SvaflazzClient
 {
-    protected $client, $url, $body;
+    protected string $url = '';
+    protected array $body = [];
 
-    public function __construct(Client $client)
+    public function __construct(protected Client $client)
     {
-        $this->client = $client;
         $this->body = [
             'username' => config('svaflazz.username'),
         ];
     }
 
-    public function setUrl(string $url)
+    public function setUrl(string $url): static
     {
         $this->url = $url;
         return $this;
     }
 
-    public function setBody(array $body)
+    public function setBody(array $body): static
     {
         $this->body = array_merge($this->body, $body);
         return $this;
     }
 
-    protected function url()
+    protected function url(): string
     {
         return config('svaflazz.base_url') . $this->url;
     }
 
-    protected function options()
+    protected function options(): array
     {
         return ['json' => $this->body];
     }
 
-    public function run()
+    public function run(): mixed
     {
         try {
             $response = $this->client->post($this->url(), $this->options());

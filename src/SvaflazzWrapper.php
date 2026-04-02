@@ -27,7 +27,7 @@ class SvaflazzWrapper
     /**
      * @return mixed
      */
-    public function checkBalance()
+    public function checkBalance(): mixed
     {
         return (new CheckBalance($this->client))->perform();
     }
@@ -36,7 +36,7 @@ class SvaflazzWrapper
      * @param string|null $buyerSkuCode
      * @return mixed
      */
-    public function priceList(string $buyerSkuCode = '')
+    public function priceList(string $buyerSkuCode = ''): mixed
     {
         return (new PriceList($this->client, $buyerSkuCode))->perform();
     }
@@ -47,7 +47,7 @@ class SvaflazzWrapper
      * @param string $ownerName
      * @return mixed
      */
-    public function deposit(int $amount, string $bank, string $ownerName)
+    public function deposit(int $amount, string $bank, string $ownerName): mixed
     {
         return (new Deposit($this->client, $amount, $bank, $ownerName))->perform();
     }
@@ -59,7 +59,7 @@ class SvaflazzWrapper
      * @param string|null $msg
      * @return mixed
      */
-    public function topup(string $buyerSkuCode, string $customerNo, string $refId, string $msg = '')
+    public function topup(string $buyerSkuCode, string $customerNo, string $refId, string $msg = ''): mixed
     {
         return (new Topup($this->client, $buyerSkuCode, $customerNo, $refId, $msg))->perform();
     }
@@ -70,7 +70,7 @@ class SvaflazzWrapper
      * @param string $refId
      * @return mixed
      */
-    public function checkBill(string $buyerSkuCode, string $customerNo, string $refId)
+    public function checkBill(string $buyerSkuCode, string $customerNo, string $refId): mixed
     {
         return (new CheckBill($this->client, $buyerSkuCode, $customerNo, $refId))->perform();
     }
@@ -81,7 +81,7 @@ class SvaflazzWrapper
      * @param string $refId
      * @return mixed
      */
-    public function payBill(string $buyerSkuCode, string $customerNo, string $refId)
+    public function payBill(string $buyerSkuCode, string $customerNo, string $refId): mixed
     {
         return (new PayBill($this->client, $buyerSkuCode, $customerNo, $refId))->perform();
     }
@@ -92,7 +92,7 @@ class SvaflazzWrapper
      * @param string $refId
      * @return mixed
      */
-    public function checkStatusBill(string $buyerSkuCode, string $customerNo, string $refId)
+    public function checkStatusBill(string $buyerSkuCode, string $customerNo, string $refId): mixed
     {
         return (new CheckStatusBill($this->client, $buyerSkuCode, $customerNo, $refId))->perform();
     }
@@ -101,7 +101,7 @@ class SvaflazzWrapper
      * @param string $customerNo
      * @return mixed
      */
-    public function inquiryPLN(string $customerNo)
+    public function inquiryPLN(string $customerNo): mixed
     {
         return (new InquiryPLN($this->client, $customerNo))->perform();
     }
